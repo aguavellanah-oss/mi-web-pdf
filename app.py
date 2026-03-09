@@ -26,3 +26,7 @@ def generar_pdf():
 
     buffer.seek(0)
     return send_file(buffer, as_attachment=True, download_name="documento.pdf")
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
